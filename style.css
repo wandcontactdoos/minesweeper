@@ -1,0 +1,26 @@
+#board {
+  display: grid;
+  margin: 2rem auto;
+  gap: 2px;
+  /* Columns will be set dynamically in JS */
+}
+
+.cell {
+  width: 8vw;
+  height: 8vw;
+  max-width: 40px;
+  max-height: 40px;
+  background: #333;
+  border: none;
+  color: white;
+  font-size: 4vw;
+  cursor: pointer;
+  user-select: none;
+}
+.cell.revealed {
+  background: #555;
+  cursor: default;
+}
+.cell.mine {
+  background: red;
+}
