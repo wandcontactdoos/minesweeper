@@ -1,26 +1,49 @@
+body {
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+  height: 100vh;            /* full viewport height */
+  margin: 0;
+  background: #ffffff;         /* optional, for contrast */
+  flex-direction: column;   /* if you want multiple elements stacked vertically */
+  gap: 10px;                /* spacing between board and other UI */
+}
+
 #board {
   display: grid;
-  margin: 2rem auto;
-  gap: 2px;
+
+  aspect-ratio: 1 / 1;
+  width: min(50vw, 50vh);
   /* Columns will be set dynamically in JS */
 }
 
 .cell {
-  width: 8vw;
-  height: 8vw;
-  max-width: 40px;
-  max-height: 40px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border: 1px solid black;
+  box-sizing: border-box;
   background: #333;
-  border: none;
   color: white;
-  font-size: 4vw;
+  font-size: 1.2em;
   cursor: pointer;
   user-select: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
 .cell.revealed {
   background: #555;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2em;
   cursor: default;
 }
+
 .cell.mine {
   background: red;
 }
